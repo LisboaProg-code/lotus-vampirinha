@@ -73,7 +73,11 @@ function abrir(){
 
     animarCarta()
 
+    const musica = document.getElementById("background-music")
 
+    musica.play().catch(error => {
+            console.log('A reprodução automática foi bloqueada. O usuário deve interagir com a página primeiro.');
+        });
 }
 
 function fechar(){
