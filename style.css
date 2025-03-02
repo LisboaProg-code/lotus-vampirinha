@@ -30,7 +30,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-flow: column nowrap;
-    transform: translateY(-20%);
+    transform: translateY(-15%);
 }
 
 .envelope {
@@ -38,7 +38,7 @@ body {
     width: 300px;
     height: 200px;
     position: relative;
-    transform: translateY(10%);
+    transform: translateY(20%);
 }
 
 .cima {
@@ -94,9 +94,9 @@ body {
     background-color: rgb(235, 232, 232);
     color: rgb(243, 129, 148);
     width: 240px;
-    height: 170px;
+    height: 190px;
     padding: 10px;
-    font-size: 1.7rem;
+    font-size: 1.2rem;
     position: absolute;
     top: 0px; 
     left: 30px; 
@@ -125,7 +125,7 @@ body {
 
 img {
     width: 120px;
-    transform: translate(3%, -170%);
+    transform: translate(3%, -140%);
     z-index: 4;
 }
 

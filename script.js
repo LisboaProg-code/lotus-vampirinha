@@ -55,17 +55,18 @@ function abrir(){
 
     function animarCarta(){
         setTimeout(() => {
-            paper.style.transform = 'translateY(-20px)'; 
+            paper.style.transform = 'translateY(-60px)'; 
             paper.style.transition = 'transform .3s ease'
         }, 1000);
 
         setTimeout(() => {
-            paper.style.transform = 'translateY(-50px)'; 
+            paper.style.transform = 'translateY(-80px)'; 
             paper.style.transition = 'transform .3s ease'
+            paper.style.height = '220px'
         }, 2000);
 
         setTimeout(() => {
-            paper.style.transform = 'translateY(-70px)'
+            paper.style.transform = 'translateY(-130px)'
             paper.style.transition = 'transform .3s ease'
         }, 3000)
     }
@@ -85,6 +86,7 @@ function fechar(){
     setTimeout(() => {
         paper.style.transform = 'translateY(10px)'; 
         paper.style.transition = 'transform .3s ease'
+        paper.style.height = '170px'
     }, 1000);
 
     setTimeout(() => {
@@ -112,3 +114,10 @@ function fechar(){
     clearInterval(intervalo1)
     clearInterval(intervalo2)
 }
+
+window.onload = function() {
+    const music = document.getElementById('background-music');
+    music.play().catch(error => {
+        console.log('A reprodução automática foi bloqueada. O usuário deve interagir com a página primeiro.');
+    });
+};
