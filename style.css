@@ -156,24 +156,25 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Para que os corações não interfiram com outros elementos */
+    pointer-events: none; 
+    overflow: hidden;
 }
 
 .coracao {
     position: absolute;
-    opacity: 0.8; /* Opacidade do emoji */
-    animation: subir 3s ease-in forwards; /* Animação de subida */
-    font-size: 30px; /* Tamanho do emoji */
+    opacity: 0.8; 
+    animation: subir 3s ease-in forwards; 
+    font-size: 30px; 
 }
 
 @keyframes subir {
     0% {
-        transform: translateY(100vh); /* Começa fora da tela */
-        opacity: 0.8; /* Opacidade inicial */
+        transform: translateY(100vh);
+        opacity: 0.8; 
     }
     100% {
-        transform: translateY(-100px); /* Move para cima */
-        opacity: 0; /* Desaparece */
+        transform: translateY(-100px); 
+        opacity: 0;
     }
 }
 
