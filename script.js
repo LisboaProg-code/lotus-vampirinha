@@ -1,9 +1,49 @@
+let intervalo1
+let intervalo2
+
 function abrir(){
     let paper = document.getElementById("papel")
     let triangulo = document.getElementById("cima")
     let imagem = document.getElementById("img")
     let button = document.getElementById("buttons")
 
+    function criarCoracao() {
+        const coracao = document.createElement('img');
+        coracao.className = 'coracao';
+        coracao.src = 'lotus.png';
+        coracao.alt = 'Coração'; 
+    
+        const posX = Math.random() * window.innerWidth;
+        coracao.style.left = `${posX}px`;
+        coracao.style.width = '150px'; 
+        coracao.style.height = '90px'; 
+    
+        document.getElementById('hearts-container').appendChild(coracao);
+    
+        coracao.addEventListener('animationend', () => {
+            coracao.remove();
+        });
+    }
+    
+    intervalo1 = setInterval(criarCoracao, 500);
+
+    function criarCoracao2() {
+        const coracao2 = document.createElement('div');
+        coracao2.className = 'coracao';
+        coracao2.textContent = '🖤'; 
+    
+        const posX = Math.random() * window.innerWidth;
+        coracao2.style.left = `${posX}px`;
+        coracao2.style.fontSize = '20px';
+    
+        document.getElementById('hearts-container').appendChild(coracao2);
+    
+        coracao2.addEventListener('animationend', () => {
+            coracao2.remove();
+        });
+    }
+    
+    intervalo2 = setInterval(criarCoracao2, 600);
     
     paper.style.display = 'block'
     button.style.padding = '25px'
@@ -14,60 +54,12 @@ function abrir(){
     triangulo.style.zIndex = '1'
     triangulo.style.transition = 'all .5s ease'
 
-    function criarCoracao() {
-        const coracao = document.createElement('img');
-        coracao.className = 'coracao';
-        coracao.src = 'lotus.png';
-        coracao.alt = 'Coração'; 
-    
-        // Posição aleatória na horizontal
-        const posX = Math.random() * window.innerWidth;
-        coracao.style.left = `${posX}px`;
-        coracao.style.width = '150px'; 
-        coracao.style.height = '90px'; 
-    
-        // Adiciona o coração ao contêiner
-        document.getElementById('hearts-container').appendChild(coracao);
-    
-        // Remove o coração após a animação
-        coracao.addEventListener('animationend', () => {
-            coracao.remove();
-        });
-    }
-    
-    // Cria um coração a cada 500ms
-    setInterval(criarCoracao, 500);
-
-    function criarCoracao2() {
-        const coracao2 = document.createElement('div');
-        coracao2.className = 'coracao';
-        coracao2.textContent = '🖤'; // Use o emoji de coração
-    
-        // Posição aleatória na horizontal
-        const posX = Math.random() * window.innerWidth;
-        coracao2.style.left = `${posX}px`;
-        coracao2.style.fontSize = '20px'; // Ajuste o tamanho do emoji conforme necessário
-    
-        // Adiciona o coração ao contêiner
-        document.getElementById('hearts-container').appendChild(coracao2);
-    
-        // Remove o coração após a animação
-        coracao2.addEventListener('animationend', () => {
-            coracao2.remove();
-        });
-    }
-    
-    // Cria um coração a cada 500ms
-    setInterval(criarCoracao2, 600);
-
     function animarCarta(){
-        // Primeiro movimento: subir um pouco
         setTimeout(() => {
             paper.style.transform = 'translateY(-20px)'; 
             paper.style.transition = 'transform .3s ease'
         }, 1000);
 
-        // Segundo movimento: subir mais um pouco
         setTimeout(() => {
             paper.style.transform = 'translateY(-50px)'; 
             paper.style.transition = 'transform .3s ease'
@@ -91,13 +83,11 @@ function fechar(){
     triangulo.style.transition = 'border-top 0.5s ease, border-bottom 0.5s ease';
 
     function animarCarta(){
-    // Primeiro movimento: subir um pouco
     setTimeout(() => {
         paper.style.transform = 'translateY(10px)'; 
         paper.style.transition = 'transform .3s ease'
     }, 1000);
 
-    // Segundo movimento: subir mais um pouco
     setTimeout(() => {
         paper.style.transform = 'translateY(20px)'; 
         paper.style.transition = 'transform .3s ease'
@@ -120,4 +110,6 @@ function fechar(){
 }
 
     animarCarta()
+    clearInterval(intervalo1)
+    clearInterval(intervalo2)
 }
