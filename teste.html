@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corações Subindo</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Impede a barra de rolagem */
+            background-color: #F2C2D4; /* Cor de fundo */
+        }
+
+        .coracao {
+            position: absolute;
+            width: 30px; /* Tamanho do coração */
+            height: 30px; /* Tamanho do coração */
+            background-color: red; /* Cor do coração */
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Forma de coração */
+            opacity: 0.8; /* Opacidade do coração */
+            animation: subir 3s ease-in forwards; /* Animação de subida */
+        }
+
+        @keyframes subir {
+            0% {
+                transform: translateY(100vh); /* Começa fora da tela */
+                opacity: 0.8; /* Opacidade inicial */
+            }
+            100% {
+                transform: translateY(-100px); /* Move para cima */
+                opacity: 0; /* Desaparece */
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function criarCoracao() {
+            const coracao = document.createElement('div');
+            coracao.className = 'coracao';
+
+            // Posição aleatória na horizontal
+            const posX = Math.random() * window.innerWidth;
+            coracao.style.left = `${posX}px`;
+
+            // Adiciona o coração ao body
+            document.body.appendChild(coracao);
+
+            // Remove o coração após a animação
+            coracao.addEventListener('animationend', () => {
+                coracao.remove();
+            });
+        }
+
+        // Cria um coração a cada 500ms
+        setInterval(criarCoracao, 500);
+    </script>
+</body>
+</html>
