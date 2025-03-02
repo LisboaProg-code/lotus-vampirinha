@@ -18,12 +18,20 @@ body::-webkit-scrollbar{
     display: none;
 }
 
-.mural{
+.mural, .mural2{
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.mural{
+    padding-bottom: 80px;
+}
+
+.mural2{
+    padding-top: 20px;
 }
 
 .conteiner {
