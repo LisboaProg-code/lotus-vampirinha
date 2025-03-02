@@ -15,6 +15,14 @@ body {
     overflow: hidden;
 }
 
+.mural{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .conteiner {
     width: 100%;
     height: 100%;
@@ -22,6 +30,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-flow: column nowrap;
+    transform: translateY(-20%);
 }
 
 .envelope {
@@ -29,6 +38,7 @@ body {
     width: 300px;
     height: 200px;
     position: relative;
+    transform: translateY(10%);
 }
 
 .cima {
@@ -81,7 +91,7 @@ body {
 
 #papel {
     display: none; 
-    background-color: whitesmoke;
+    background-color: rgb(235, 232, 232);
     color: rgb(243, 129, 148);
     width: 240px;
     height: 170px;
@@ -114,9 +124,18 @@ body {
 }
 
 img {
-    width: 110px;
-    transform: translate(3%, -200%);
+    width: 120px;
+    transform: translate(3%, -170%);
     z-index: 4;
+}
+
+.imagem{
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    max-height: 300px;
+    transform: translate(0%, 0%);
+    z-index: 0;
 }
 
 #hearts-container {

@@ -46,7 +46,6 @@ function abrir(){
     intervalo2 = setInterval(criarCoracao2, 600);
     
     paper.style.display = 'block'
-    button.style.padding = '25px'
 
     triangulo.style.borderTop = '0'
     triangulo.style.borderBottom = '120px solid #F581A4'
